@@ -13,10 +13,10 @@ def home():
 
 @app.route("/stats", methods=["POST", "GET"])
 def stats():
-    res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats"})
+    res=requests.post(url, json={"image":request.get_json()["image"], "route":"/stats"})
     return res.content
 
 @app.route("/stats_increment", methods=["POST", "GET"])
 def stats_increment():
-    res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats_increment"})
+    res=requests.post(url, json={"image":request.get_json()["image"], "route":"/stats_increment"})
     return res.content
