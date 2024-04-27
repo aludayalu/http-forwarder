@@ -7,5 +7,5 @@ url="http://0.tcp.in.ngrok.io:17861"
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    res=requests.post(url, files=dict(request.files), headers=dict(request.headers))
+    res=requests.post(url, json={"image":request.get_json()["image"]})
     return res.content
