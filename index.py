@@ -3,7 +3,7 @@ from flask import Flask, request
 
 app=Flask(__name__)
 
-url="http://0.tcp.in.ngrok.io:17861"
+url="http://0.tcp.in.ngrok.io:12595"
 
 @app.route("/", methods=["POST", "GET"])
 def home():
