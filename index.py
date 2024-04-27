@@ -8,15 +8,15 @@ url="http://0.tcp.in.ngrok.io:17861"
 @app.route("/", methods=["POST", "GET"])
 def home():
     print(request.get_json())
-    res=requests.post(url, json={"image":request.get_json()["image"]})
+    res=requests.post(url, json={"image":request.get_json()["image"], "route":"/"})
     return res.content
 
 @app.route("/stats", methods=["POST", "GET"])
 def home():
-    res=requests.get(url.strip("/")+"/stats", json={"image":request.get_json()["image"]})
+    res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats"})
     return res.content
 
 @app.route("/stats_increment", methods=["POST", "GET"])
 def home():
-    res=requests.get(url.strip("/")+"/stats", json={"image":request.get_json()["image"]})
+    res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats_increment"})
     return res.content
