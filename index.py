@@ -12,11 +12,11 @@ def home():
     return res.content
 
 @app.route("/stats", methods=["POST", "GET"])
-def home():
+def stats():
     res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats"})
     return res.content
 
 @app.route("/stats_increment", methods=["POST", "GET"])
-def home():
+def stats_increment():
     res=requests.get(url, json={"image":request.get_json()["image"], "route":"/stats_increment"})
     return res.content
