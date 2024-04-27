@@ -5,6 +5,6 @@ with open('car.jpg', 'rb') as f:
 
 files = {'image': (img_bytes)}
 print(files)
-r = requests.post(url='http://127.0.0.1:5000', json=files)
+r = requests.post(url='https://http-forwarder-aarav-dayals-projects.vercel.app/', json=files)
 print(r.content)
 print(r.json())
